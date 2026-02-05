@@ -24,7 +24,7 @@ const HeroSection = () => {
           >
             <div className="w-32 h-32 md:w-55 md:h-55 mx-auto rounded-full overflow-hidden border-4 border-background shadow-xl">
               <img
-                src="src/assets/img/perfil.png"
+                src="assets/img/perfil.png"
                 alt="Perfil"
                 className="w-full h-full object-cover"
               />
