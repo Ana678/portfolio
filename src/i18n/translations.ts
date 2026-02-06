@@ -1,3 +1,5 @@
+import { Figma } from "lucide-react";
+
 export const translations = {
   pt: {
     nav: {
@@ -38,7 +40,7 @@ export const translations = {
           title: "UX/UI Designer",
           institution: "Datavence",
           description:
-            "Idealizo e construo tecologias para partidos políticos, fortalecendo a governança democrática através da tecnologia.",
+            "Idealizo e construo tecnologias para partidos políticos, fortalecendo a governança democrática através da tecnologia.",
           type: "work",
           highlights: [
             "Arquitetura de sistemas escaláveis para gestão partidária e captação de recursos eficiente.",
@@ -73,7 +75,7 @@ export const translations = {
       active: {
         title: "Vida Ativa",
         description:
-          "Sou uma pessoa que ama estar em movimento. Corrida, academia e bike fazem parte da minha rotina. Adoro a natureza, animais (especialmente gatos 🐱) e busco equilíbrio entre corpo e mente. Também sou movida por curiosidade: eventos de tecnologia e arte, viagens e fotografia me inspiram a crescer sempre.",
+          "Sou uma pessoa que ama estar em movimento. Corrida, academia e bike fazem parte da minha rotina. Tenho uma conexão forte com a natureza, amo os animais (especialmente gatos 🐱) — e busco sempre o equilíbrio entre corpo e mente. <br/> Também sou movida pela curiosidade e pela criatividade: gosto de fazer artesanato, sei trabalhar com macramê e atualmente estou aprendendo crochê. Além disso, eventos de tecnologia e arte, viagens e fotografia me inspiram e me motivam a crescer sempre.",
       },
       tech: {
         title: "Hard Skills",
@@ -122,19 +124,17 @@ export const translations = {
       links: "Links do Projeto",
       projects: [
         {
-          // https://www.figma.com/design/8Bzu2fRaY875TwtBhIjfC6/COOKUP?node-id=0-1&t=Z15QQ84Dt9sx0wd6-1
-          title: "CookUP - Plataforma de Receitas",
+          title: "CASI - Clínica de Apoio à Saúde do Idoso",
           description:
-            "Projeto Acadêmico de plataforma de receitas com rede social e gamificação.",
-          tags: ["Flutter", "Dart", "Firebase", "UI/UX"],
-          img: "assets/img/cookup.png",
+            "Sistema de gerenciamento de pacientes e agendamento para clínica geriátrica.",
+          tags: ["UX/UI", "Requisitos"],
+          img: "assets/img/casi.png",
           hasDemo: false,
-          hasCode: true,
+          hasCode: false,
           hasFigma: true,
           figma:
-            "https://www.figma.com/design/8Bzu2fRaY875TwtBhIjfC6/COOKUP?node-id=0-1&t=Z15QQ84Dt9sx0wd6-1",
+            "https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1",
         },
-
         {
           title: "TourAi",
           description:
@@ -146,11 +146,10 @@ export const translations = {
           hasFigma: false,
           code: "https://github.com/Ana678/tourai-frontend",
         },
-        // https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1
         {
           title: "SAPSSense - Sistema de Apoio à Decisão na UTI",
           description:
-            "Plataforma que faz uma previsão da mortalidade na UTI partir do formulário SAPS III e uso de IA",
+            "Plataforma que faz uma previsão da mortalidade de pacientes da UTI a partir de um formulário seguindo o modelo do SAPS III e uso de IA",
           tags: ["Flask", "CSS"],
           img: "assets/img/saps.png",
           hasDemo: false,
@@ -159,7 +158,18 @@ export const translations = {
           figma:
             "https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1",
         },
-        //https://www.figma.com/design/m2KAdIx6IHbCBP7Echxezy/RestoWeb?node-id=203-2&t=Tf2MeM77rgzqXluk-1
+        {
+          title: "CookUP - Plataforma de Receitas",
+          description:
+            "Projeto Acadêmico de plataforma de receitas com rede social e gamificação.",
+          tags: ["Flutter", "Dart", "Firebase", "UI/UX"],
+          img: "assets/img/cookup.png",
+          hasDemo: false,
+          hasCode: true,
+          hasFigma: true,
+          figma:
+            "https://www.figma.com/design/8Bzu2fRaY875TwtBhIjfC6/COOKUP?node-id=0-1&t=Z15QQ84Dt9sx0wd6-1",
+        },
         {
           title: "RestoWeb",
           description:
@@ -169,19 +179,8 @@ export const translations = {
           hasDemo: false,
           hasCode: true,
           hasFigma: true,
-        },
-        // https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1
-        {
-          title: "CASI - Clínica de Apoio à Saúde do Idoso",
-          description:
-            "Sistema de gerenciamento de pacientes e agendamento para clínica geriátrica.",
-          tags: ["UX/UI", "Requisitos"],
-          img: "assets/img/casi.png",
-          hasDemo: false,
-          hasCode: false,
-          hasFigma: true,
           figma:
-            "https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1",
+            "https://www.figma.com/design/m2KAdIx6IHbCBP7Echxezy/RestoWeb?node-id=203-2&t=Tf2MeM77rgzqXluk-1",
         },
       ],
     },
@@ -309,21 +308,21 @@ export const translations = {
       figma: "Figma",
       projects: [
         {
-          // https://www.figma.com/design/8Bzu2fRaY875TwtBhIjfC6/COOKUP?node-id=0-1&t=Z15QQ84Dt9sx0wd6-1
-          title: "CookUP - Plataforma de Receitas",
+          title: "CASI - Elderly Health Support Clinic",
           description:
-            "Projeto Acadêmico de plataforma de receitas com rede social e gamificação.",
-          tags: ["Fluter", "Dart", "Firebase", "UI/UX"],
-          img: "assets/img/cookup.png",
+            "Patient management and scheduling system for a geriatric clinic.",
+          tags: ["UX/UI", "Requirements"],
+          img: "assets/img/casi.png",
           hasDemo: false,
-          hasCode: true,
+          hasCode: false,
           hasFigma: true,
+          figma:
+            "https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1",
         },
-
         {
           title: "TourAi",
           description:
-            "Aplicativo de organização de viagens com itinerários personalizados usando IA generativa.",
+            "Travel organization system with personalized itineraries using generative AI.",
           tags: ["React", "Next", "Spring Boot", "PostgreSQL"],
           img: "assets/img/tourai.png",
           hasDemo: false,
@@ -331,11 +330,10 @@ export const translations = {
           hasFigma: false,
           code: "https://github.com/Ana678/tourai-frontend",
         },
-        // https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1
         {
-          title: "SAPSSense - Sistema de Apoio à Decisão na UTI",
+          title: "SAPSSense - ICU Decision Support System",
           description:
-            "Plataforma que faz uma previsão da mortalidade na UTI partir do formulário SAPS III e uso de IA",
+            "Platform that predicts ICU patient mortality based on a form following the SAPS III model and the use of AI.",
           tags: ["Flask", "CSS"],
           img: "assets/img/saps.png",
           hasDemo: false,
@@ -344,29 +342,29 @@ export const translations = {
           figma:
             "https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1",
         },
-        //https://www.figma.com/design/m2KAdIx6IHbCBP7Echxezy/RestoWeb?node-id=203-2&t=Tf2MeM77rgzqXluk-1
+        {
+          title: "CookUP - Recipe Platform",
+          description:
+            "Academic project of a recipe platform with social networking and gamification.",
+          tags: ["Flutter", "Dart", "Firebase", "UI/UX"],
+          img: "assets/img/cookup.png",
+          hasDemo: false,
+          hasCode: true,
+          hasFigma: true,
+          figma:
+            "https://www.figma.com/design/8Bzu2fRaY875TwtBhIjfC6/COOKUP?node-id=0-1&t=Z15QQ84Dt9sx0wd6-1",
+        },
         {
           title: "RestoWeb",
           description:
-            "Sistema de gerenciamento de restaurantes. Fluxos para cliente e cozinha.",
+            "Restaurant management system with workflows for customers and kitchen staff.",
           tags: ["React", "Tailwind", "Node.js", "MySQL"],
           img: "assets/img/restoweb.png",
           hasDemo: false,
           hasCode: true,
           hasFigma: true,
-        },
-        // https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1
-        {
-          title: "CASI - Clínica de Apoio à Saúde do Idoso",
-          description:
-            "Sistema de gerenciamento de pacientes e agendamento para clínica geriátrica.",
-          tags: ["UX/UI", "Requisitos"],
-          img: "assets/img/casi.png",
-          hasDemo: false,
-          hasCode: false,
-          hasFigma: true,
           figma:
-            "https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1",
+            "https://www.figma.com/design/m2KAdIx6IHbCBP7Echxezy/RestoWeb?node-id=203-2&t=Tf2MeM77rgzqXluk-1",
         },
       ],
     },
