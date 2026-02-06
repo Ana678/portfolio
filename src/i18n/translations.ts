@@ -75,7 +75,7 @@ export const translations = {
       active: {
         title: "Vida Ativa",
         description:
-          "Sou uma pessoa que ama estar em movimento. Corrida, academia e bike fazem parte da minha rotina. Tenho uma conexão forte com a natureza, amo os animais (especialmente gatos 🐱) — e busco sempre o equilíbrio entre corpo e mente. <br/> Também sou movida pela curiosidade e pela criatividade: gosto de fazer artesanato, sei trabalhar com macramê e atualmente estou aprendendo crochê. Além disso, eventos de tecnologia e arte, viagens e fotografia me inspiram e me motivam a crescer sempre.",
+          "Sou uma pessoa que ama estar em movimento. Corrida, academia e bike fazem parte da minha rotina. Tenho uma conexão forte com a natureza, amo os animais (especialmente gatos 🐱) — e busco sempre o equilíbrio entre corpo e mente. Também sou movida pela curiosidade e pela criatividade: gosto de fazer artesanato, sei trabalhar com macramê e atualmente estou aprendendo crochê. Além disso, eventos de tecnologia e arte, viagens e fotografia me inspiram e me motivam a crescer sempre.",
       },
       tech: {
         title: "Hard Skills",
