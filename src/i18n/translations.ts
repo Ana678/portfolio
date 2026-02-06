@@ -57,7 +57,7 @@ export const translations = {
             "Sistemas de gestão hospitalar que reduzem tempo de atendimento",
             "Interfaces acessíveis que facilitam o trabalho de profissionais de saúde",
           ],
-          impact: "Saúde pública nacional",
+          impact: "Saúde Pública Brasileira",
         },
         {
           year: "2026 - Atual",
@@ -156,7 +156,8 @@ export const translations = {
           hasDemo: false,
           hasCode: true,
           hasFigma: true,
-          figma: "https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1",
+          figma:
+            "https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1",
         },
         //https://www.figma.com/design/m2KAdIx6IHbCBP7Echxezy/RestoWeb?node-id=203-2&t=Tf2MeM77rgzqXluk-1
         {
