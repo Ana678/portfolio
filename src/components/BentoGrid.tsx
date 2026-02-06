@@ -42,21 +42,21 @@ const BentoGrid = () => {
           >
             {/* Icons na vertical */}
             <div className="flex flex-row md:flex-col gap-3 flex-shrink-0">
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0 }}
               >
                 <Bike className="w-6 h-6 text-secondary" />
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
               >
                 <TreePine className="w-6 h-6 text-primary" />
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
@@ -81,7 +81,7 @@ const BentoGrid = () => {
             transition={{ type: "spring", stiffness: 300 }}
             className="bento-card flex flex-col items-center text-center cursor-pointer"
           >
-            <motion.div 
+            <motion.div
               className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-4"
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
@@ -104,7 +104,7 @@ const BentoGrid = () => {
             className="bento-card md:col-span-2 cursor-pointer"
           >
             <div className="flex items-center gap-3 mb-4">
-              <motion.div 
+              <motion.div
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -138,9 +138,9 @@ const BentoGrid = () => {
             transition={{ type: "spring", stiffness: 300 }}
             className="bento-card flex flex-col cursor-pointer"
           >
-            <motion.div 
+            <motion.div
               className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"
-              animate={{ 
+              animate={{
                 boxShadow: ["0 0 0 0 rgba(107, 142, 119, 0)", "0 0 0 10px rgba(107, 142, 119, 0.2)", "0 0 0 0 rgba(107, 142, 119, 0)"]
               }}
               transition={{ duration: 2, repeat: Infinity }}

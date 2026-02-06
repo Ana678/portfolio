@@ -13,14 +13,14 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: t.contact.email,
-      href: "mailto:anacarolinaneta@email.com",
-      value: "anacarolinaneta@email.com",
+      href: "mailto:anacarolinaneta@hotmail.com",
+      value: "anacarolinaneta@hotmail.com",
     },
     {
       icon: Phone,
       label: t.contact.whatsapp,
       href: "https://wa.me/5584998422170",
-      value: "+55 84 99842-2170",
+      value: "+55 84 98422-2170",
     },
     {
       icon: Linkedin,
@@ -52,8 +52,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32" ref={ref}>
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
+      <motion.div
+        className="absolute -top-20 -right-20 w-60 h-60 bg-primary/5 rounded-full blur-3xl"
+        initial={{ scale: 0 }}
+        animate={isInView ? { scale: 1 } : {}}
+        transition={{ duration: 1.5 }}
+      />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

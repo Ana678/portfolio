@@ -46,7 +46,7 @@
     --terracotta: 11 39% 68%;
     --cream: 60 9% 97%;
     --graphite: 0 0% 20%;
-    
+
     /* Glassmorphism */
     --glass-bg: 60 9% 97% / 0.7;
     --glass-border: 60 9% 97% / 0.3;
@@ -89,7 +89,7 @@
     --terracotta: 11 42% 72%;
     --cream: 60 9% 92%;
     --graphite: 220 15% 10%;
-    
+
     /* Glassmorphism - dark */
     --glass-bg: 220 15% 15% / 0.7;
     --glass-border: 220 15% 25% / 0.3;
@@ -106,6 +106,11 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+}
+
 }
 
 @layer components {

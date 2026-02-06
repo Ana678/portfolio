@@ -6,6 +6,7 @@ import BentoGrid from "@/components/BentoGrid";
 import PortfolioSection from "@/components/PortfolioSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import GlassVase from "@/components/decorative/GlassVase";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
           <BentoGrid />
           <PortfolioSection />
           <ContactSection />
+          <GlassVase />
         </main>
         <Footer />
       </div>

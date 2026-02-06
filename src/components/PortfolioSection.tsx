@@ -25,14 +25,6 @@ const PortfolioSection = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
   };
 
-  // Placeholder images with gradients
-  const projectImages = [
-    "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%)",
-    "linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%)",
-    "linear-gradient(135deg, hsl(140 30% 60%) 0%, hsl(var(--primary)) 100%)",
-    "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(160 40% 50%) 100%)",
-    "linear-gradient(135deg, hsl(200 30% 50%) 0%, hsl(var(--secondary)) 100%)",
-  ];
 
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-muted/30" ref={ref}>
@@ -66,13 +58,17 @@ const PortfolioSection = () => {
                 key={index}
                 variants={itemVariants}
                 className="group relative flex-shrink-0 w-[320px] md:w-[380px] snap-start"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 250 }}
               >
                 <div className="relative overflow-hidden rounded-2xl bg-background shadow-md transition-all duration-500 group-hover:shadow-2xl h-full">
-                  {/* Project Image/Mockup */}
-                  <div
-                    className="h-48 md:h-56 w-full relative"
-                    style={{ background: projectImages[index % projectImages.length] }}
-                  >
+                  {/* Project Image */}
+                  <div className="h-48 md:h-56 w-full relative overflow-hidden">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-all duration-500" />
 
                     {/* Glassmorphism overlay on hover */}
@@ -87,7 +83,7 @@ const PortfolioSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col">
+                  <div className="p-6">
                     <h3 className="font-serif text-xl font-medium mb-2 text-foreground">
                       {project.title}
                     </h3>
@@ -111,8 +107,10 @@ const PortfolioSection = () => {
                     <div className="flex gap-3 pt-2 border-t border-border">
                       {project.hasDemo && (
                         <a
-                          href="#"
+                          href={project.demo || "#"}
                           className="flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Play className="w-4 h-4" />
                           <span>{t.portfolio.demo}</span>
@@ -120,8 +118,10 @@ const PortfolioSection = () => {
                       )}
                       {project.hasCode && (
                         <a
-                          href="#"
+                          href={project.code || "#"}
                           className="flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Github className="w-4 h-4" />
                           <span>{t.portfolio.code}</span>
@@ -129,8 +129,10 @@ const PortfolioSection = () => {
                       )}
                       {project.hasFigma && (
                         <a
-                          href="#"
+                          href={project.figma || "#"}
                           className="flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Figma className="w-4 h-4" />
                           <span>{t.portfolio.figma}</span>

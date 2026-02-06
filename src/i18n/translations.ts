@@ -18,31 +18,50 @@ export const translations = {
         "Uma jornada de crescimento constante, onde cada etapa construiu a profissional que sou hoje.",
       timeline: [
         {
-          year: "2018 - 2021",
+          year: "2017 - 2021",
           title: "Técnico em Informática",
           institution: "IFRN",
           description:
             "Onde a base foi construída. Primeiros passos em programação, lógica e pensamento computacional.",
+          type: "education",
         },
         {
-          year: "2021 - 2024",
+          year: "2022 - 2025",
           title: "Tecnologia da Informação",
           institution: "UFRN",
           description:
             "Foco em engenharia e lógica. Desenvolvimento de software com fundamentos sólidos.",
+          type: "education",
         },
         {
-          year: "2024 - Atual",
+          year: "2022 - Atual",
+          title: "UX/UI Designer & Desenvolvedora Web",
+          institution: "Datavence",
+          description:
+            "Idealizando e construindo plataformas web para partidos políticos, contribuindo ativamente para a democracia e política do país.",
+          type: "work",
+        },
+        {
+          year: "2022 - Atual",
+          title: "UX/UI Designer",
+          institution: "1Gov",
+          description:
+            "Idealizando e construindo soluções tecnológicas para a saúde pública, impactando positivamente a vida dos cidadãos brasileiros.",
+          type: "work",
+        },
+        {
+          year: "2026 - Atual",
           title: "Engenharia de Software",
           institution: "UFRN - 2º Ciclo",
           description:
             "Especialização atual em arquitetura e sistemas complexos. Visão completa do ciclo de desenvolvimento.",
+          type: "education",
         },
       ],
     },
     bento: {
       active: {
-        title: "Vida Ativa 🌿",
+        title: "Vida Ativa",
         description:
           "Sou uma pessoa que ama estar em movimento. Corrida, academia e bike fazem parte da minha rotina. Adoro a natureza, animais (especialmente gatos 🐱) e busco equilíbrio entre corpo e mente. Também sou movida por curiosidade: eventos de tecnologia e arte, viagens e fotografia me inspiram a crescer sempre.",
       },
@@ -90,20 +109,23 @@ export const translations = {
           title: "CookUP - Plataforma de Receitas",
           description:
             "Projeto Acadêmico de plataforma de receitas com rede social e gamificação.",
-          tags: ["Fluter", "Dart", "Firebase", "UI/UX"],
+          tags: ["Flutter", "Dart", "Firebase", "UI/UX"],
+          img: "assets/img/cookup.png",
           hasDemo: false,
           hasCode: true,
           hasFigma: true,
         },
-        
+
         {
           title: "TourAi",
           description:
-            "Aplicativo de organização de viagens com itinerários personalizados usando IA generativa.",
+            "Sistema de organização de viagens com itinerários personalizados usando IA generativa.",
           tags: ["React", "Next", "Spring Boot", "PostgreSQL"],
-          hasDemo: true,
+          img: "assets/img/tourai.png",
+          hasDemo: false,
           hasCode: true,
           hasFigma: false,
+          code: "https://github.com/Ana678/tourai-frontend",
         },
         // https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1
         {
@@ -111,6 +133,7 @@ export const translations = {
           description:
             "Plataforma que faz uma previsão da mortalidade na UTI partir do formulário SAPS III e uso de IA",
           tags: ["Flask", "CSS"],
+          img: "assets/img/saps.png",
           hasDemo: false,
           hasCode: true,
           hasFigma: true,
@@ -121,6 +144,7 @@ export const translations = {
           description:
             "Sistema de gerenciamento de restaurantes. Fluxos para cliente e cozinha.",
           tags: ["React", "Tailwind", "Node.js", "MySQL"],
+          img: "assets/img/restoweb.png",
           hasDemo: true,
           hasCode: true,
           hasFigma: true,
@@ -131,9 +155,12 @@ export const translations = {
           description:
             "Sistema de gerenciamento de pacientes e agendamento para clínica geriátrica.",
           tags: ["UX/UI", "Requisitos"],
+          img: "assets/img/casi.png",
           hasDemo: false,
           hasCode: false,
           hasFigma: true,
+          figma:
+            "https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1",
         },
       ],
     },
@@ -164,31 +191,50 @@ export const translations = {
         "A journey of constant growth, where each step built the professional I am today.",
       timeline: [
         {
-          year: "2018 - 2021",
+          year: "2017 - 2021",
           title: "IT Technician",
           institution: "IFRN",
           description:
             "Where the foundation was built. First steps in programming, logic and computational thinking.",
+          type: "education",
         },
         {
-          year: "2021 - 2024",
+          year: "2022 - 2025",
           title: "Information Technology",
           institution: "UFRN",
           description:
             "Focus on engineering and logic. Software development with solid fundamentals.",
+          type: "education",
         },
         {
-          year: "2024 - Present",
+          year: "2022 - Present",
+          title: "UX/UI Designer & Web Developer",
+          institution: "Datavence",
+          description:
+            "Idealizing and building web platforms for political parties, actively contributing to democracy and the country's politics.",
+          type: "work",
+        },
+        {
+          year: "2022 - Present",
+          title: "UX/UI Designer",
+          institution: "1Gov",
+          description:
+            "Idealizing and building technological solutions for public health, positively impacting Brazilian citizens' lives.",
+          type: "work",
+        },
+        {
+          year: "2026 - Present",
           title: "Software Engineering",
           institution: "UFRN - 2nd Cycle",
           description:
             "Current specialization in architecture and complex systems. Complete view of the development cycle.",
+          type: "education",
         },
       ],
     },
     bento: {
       active: {
-        title: "Active Life 🌿",
+        title: "Active Life",
         description:
           "I'm someone who loves being in motion. Running, gym and cycling are part of my routine. I love nature, animals (especially cats 🐱) and seek balance between body and mind. I'm also driven by curiosity: tech and art events, travel and photography inspire me to keep growing.",
       },
@@ -232,44 +278,63 @@ export const translations = {
       figma: "Figma",
       projects: [
         {
-          title: "E-commerce Dashboard",
-          description: "Admin panel with real-time data visualization",
-          tags: ["React", "TypeScript", "Chart.js"],
-          hasDemo: true,
-          hasCode: true,
-          hasFigma: true,
-        },
-        {
-          title: "Health App",
-          description: "Mobile-first app for healthy habits tracking",
-          tags: ["React Native", "Node.js", "MongoDB"],
-          hasDemo: true,
-          hasCode: true,
-          hasFigma: false,
-        },
-        {
-          title: "Academic System",
-          description: "Academic management platform focused on UX",
-          tags: ["Java", "Spring Boot", "PostgreSQL"],
+          // https://www.figma.com/design/8Bzu2fRaY875TwtBhIjfC6/COOKUP?node-id=0-1&t=Z15QQ84Dt9sx0wd6-1
+          title: "CookUP - Plataforma de Receitas",
+          description:
+            "Projeto Acadêmico de plataforma de receitas com rede social e gamificação.",
+          tags: ["Fluter", "Dart", "Firebase", "UI/UX"],
+          img: "assets/img/cookup.png",
           hasDemo: false,
           hasCode: true,
           hasFigma: true,
         },
+
         {
-          title: "SaaS Landing Page",
-          description: "Conversion page for a tech startup",
-          tags: ["React", "Tailwind", "Framer Motion"],
+          title: "TourAi",
+          description:
+            "Aplicativo de organização de viagens com itinerários personalizados usando IA generativa.",
+          tags: ["React", "Next", "Spring Boot", "PostgreSQL"],
+          img: "assets/img/tourai.png",
+          hasDemo: false,
+          hasCode: true,
+          hasFigma: false,
+          code: "https://github.com/Ana678/tourai-frontend",
+        },
+        // https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1
+        {
+          title: "SAPSSense - Sistema de Apoio à Decisão na UTI",
+          description:
+            "Plataforma que faz uma previsão da mortalidade na UTI partir do formulário SAPS III e uso de IA",
+          tags: ["Flask", "CSS"],
+          img: "assets/img/saps.png",
+          hasDemo: false,
+          hasCode: true,
+          hasFigma: true,
+          figma:
+            "https://www.figma.com/design/VXcliMY0EYshQI6vEmK57M/SAPSENSE?node-id=3-3&t=aJGttdO2EeS82YkB-1",
+        },
+        //https://www.figma.com/design/m2KAdIx6IHbCBP7Echxezy/RestoWeb?node-id=203-2&t=Tf2MeM77rgzqXluk-1
+        {
+          title: "RestoWeb",
+          description:
+            "Sistema de gerenciamento de restaurantes. Fluxos para cliente e cozinha.",
+          tags: ["React", "Tailwind", "Node.js", "MySQL"],
+          img: "assets/img/restoweb.png",
           hasDemo: true,
           hasCode: true,
           hasFigma: true,
         },
+        // https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1
         {
-          title: "Payments API",
-          description: "Microservice for payment gateway integration",
-          tags: ["Java", "Spring Cloud", "Docker"],
+          title: "CASI - Clínica de Apoio à Saúde do Idoso",
+          description:
+            "Sistema de gerenciamento de pacientes e agendamento para clínica geriátrica.",
+          tags: ["UX/UI", "Requisitos"],
+          img: "assets/img/casi.png",
           hasDemo: false,
-          hasCode: true,
-          hasFigma: false,
+          hasCode: false,
+          hasFigma: true,
+          figma: "https://www.figma.com/design/4OzMQZoTSOCXxx3RZuV6Mk/Projeto-PIU?node-id=3-2&t=xtqB6TjZNr99ouze-1",
         },
       ],
     },
@@ -281,145 +346,7 @@ export const translations = {
       getInTouch: "Get in touch",
     },
   },
-  es: {
-    nav: {
-      about: "Sobre",
-      skills: "Skills",
-      portfolio: "Portafolio",
-      contact: "Contacto",
-    },
-    hero: {
-      title: "Ingeniería de Software con Propósito Humano",
-      subtitle:
-        "UX Designer & Desarrolladora Web — uniendo el rigor técnico con la sensibilidad del diseño",
-      cta: "Ver Proyectos",
-    },
-    about: {
-      title: "Mi Trayectoria",
-      intro:
-        "Un viaje de crecimiento constante, donde cada etapa construyó la profesional que soy hoy.",
-      timeline: [
-        {
-          year: "2018 - 2021",
-          title: "Técnico en Informática",
-          institution: "IFRN",
-          description:
-            "Donde se construyó la base. Primeros pasos en programación, lógica y pensamiento computacional.",
-        },
-        {
-          year: "2021 - 2024",
-          title: "Tecnología de la Información",
-          institution: "UFRN",
-          description:
-            "Enfoque en ingeniería y lógica. Desarrollo de software con fundamentos sólidos.",
-        },
-        {
-          year: "2024 - Actual",
-          title: "Ingeniería de Software",
-          institution: "UFRN - 2º Ciclo",
-          description:
-            "Especialización actual en arquitectura y sistemas complejos. Visión completa del ciclo de desarrollo.",
-        },
-      ],
-    },
-    bento: {
-      active: {
-        title: "Vida Activa 🌿",
-        description:
-          "Soy una persona que ama estar en movimiento. Correr, gym y bici son parte de mi rutina. Amo la naturaleza, los animales (especialmente gatos 🐱) y busco equilibrio entre cuerpo y mente. También me mueve la curiosidad: eventos de tecnología y arte, viajes y fotografía me inspiran a crecer siempre.",
-      },
-      tech: {
-        title: "Hard Skills",
-        skills: [
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Java",
-          "Spring Cloud",
-          "NestJS",
-          "Node.js",
-          "API REST",
-          "Scrum",
-          "C++",
-          "Python",
-          "Figma",
-          "PostgreSQL",
-          "Git",
-        ],
-      },
-      ai: {
-        title: "IA como Herramienta",
-        description:
-          "Uso la IA como herramienta de productividad para enfocarme en lo humano: estrategia, UX y creatividad.",
-      },
-      soft: {
-        title: "Diseño & Empatía",
-        description:
-          "Enfoque en UX/UI con cuidado genuino por el usuario. Cada interfaz es una conversación, no una imposición.",
-      },
-    },
-    portfolio: {
-      title: "Proyectos",
-      subtitle:
-        "Una selección de trabajos que demuestran mi versatilidad y atención al detalle.",
-      viewProject: "Ver Proyecto",
-      demo: "Demo",
-      code: "Code",
-      figma: "Figma",
-      projects: [
-        {
-          title: "Dashboard E-commerce",
-          description:
-            "Panel administrativo con visualización de datos en tiempo real",
-          tags: ["React", "TypeScript", "Chart.js"],
-          hasDemo: true,
-          hasCode: true,
-          hasFigma: true,
-        },
-        {
-          title: "App de Salud",
-          description:
-            "Aplicación mobile-first para seguimiento de hábitos saludables",
-          tags: ["React Native", "Node.js", "MongoDB"],
-          hasDemo: true,
-          hasCode: true,
-          hasFigma: false,
-        },
-        {
-          title: "Sistema Académico",
-          description: "Plataforma de gestión académica enfocada en UX",
-          tags: ["Java", "Spring Boot", "PostgreSQL"],
-          hasDemo: false,
-          hasCode: true,
-          hasFigma: true,
-        },
-        {
-          title: "Landing Page SaaS",
-          description: "Página de conversión para startup de tecnología",
-          tags: ["React", "Tailwind", "Framer Motion"],
-          hasDemo: true,
-          hasCode: true,
-          hasFigma: true,
-        },
-        {
-          title: "API de Pagos",
-          description: "Microservicio de integración con pasarelas de pago",
-          tags: ["Java", "Spring Cloud", "Docker"],
-          hasDemo: false,
-          hasCode: true,
-          hasFigma: false,
-        },
-      ],
-    },
-    contact: {
-      title: "Hablemos",
-      subtitle: "Siempre estoy abierta a nuevas oportunidades y conexiones.",
-      email: "Email",
-      whatsapp: "WhatsApp",
-      getInTouch: "Contactar",
-    },
-  },
 };
 
-export type Language = "pt" | "en" | "es";
+export type Language = "pt" | "en";
 export type Translations = typeof translations.pt;
