@@ -13,8 +13,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: t.contact.email,
-      href: "mailto:anacarolinaneta@hotmail.com",
-      value: "anacarolinaneta@hotmail.com",
+      href: "mailto:anaaraujo.dev@gmail.com",
+      value: "anaaraujo.dev@gmail.com",
     },
     {
       icon: Phone,
