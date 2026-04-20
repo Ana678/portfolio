@@ -1,219 +1,194 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { X, Github, Figma, Play, Globe, Eye, Layers, Award, Code2, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState } from "react";
+import { AlertCircle, Lightbulb, Cpu, TrendingUp, FileText, Download, Github, Figma, Play } from "lucide-react";
+import type { ProjectDetails } from "@/i18n/types";
 
 interface ProjectModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  project: {
-    title: string;
-    description: string;
-    longDescription: string;
-    role: string;
-    results: string;
-    tags: string[];
-    hasDemo: boolean;
-    hasCode: boolean;
-    hasFigma: boolean;
-    hasLive: boolean;
-    demoUrl: string;
-    codeUrl: string;
-    figmaUrl: string;
-    liveUrl: string;
-  };
-  projectImages: string[];
+    open: boolean;
+    onOpenChange: (open: boolean) => void;
+    project: ProjectDetails | null;
+    images: string[];
+    links?: { demo?: string; code?: string; figma?: string };
 }
 
-const ProjectCarousel = ({ images, title }: { images: string[]; title: string }) => {
-  const [current, setCurrent] = useState(0);
+const ProjectModal = ({ open, onOpenChange, project, images, links }: ProjectModalProps) => {
+    const { t } = useLanguage();
+    if (!project) return null;
+    const m = t.portfolio.modal;
+    const results = project.results ?? [];
+    const artifacts = project.artifacts ?? [];
 
-  const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    return (
+        <Dialog open={open} onOpenChange={onOpenChange}>
+            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 gap-0 no-scrollbar">
+                {images.length > 0 && (
+                    <div className="bg-muted relative">
+                        <Carousel className="w-full" opts={{ loop: images.length > 1 }}>
+                            <CarouselContent>
+                                {images.map((src, i) => (
+                                    <CarouselItem key={i}>
+                                        <div className="aspect-[16/9] w-full overflow-hidden">
+                                            <img
+                                                src={src}
+                                                alt={`${project.title} ${i + 1}`}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            {images.length > 1 && (
+                                <>
+                                    <CarouselPrevious className="left-4" />
+                                    <CarouselNext className="right-4" />
+                                </>
+                            )}
+                        </Carousel>
+                    </div>
+                )}
 
-  return (
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-muted">
-      <img
-        src={images[current]}
-        alt={`${title} - Tela ${current + 1}`}
-        className="w-full h-full object-cover transition-opacity duration-300"
-      />
-      {images.length > 1 && (
-        <>
-          <button
-            onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-background/80 backdrop-blur-sm text-foreground hover:bg-background transition-colors"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-background/80 backdrop-blur-sm text-foreground hover:bg-background transition-colors"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  i === current ? "bg-primary w-5" : "bg-background/60"
-                }`}
-              />
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
+                <div className="p-6 md:p-8 space-y-6">
+                    <DialogHeader>
+                        <DialogTitle className="font-serif text-2xl md:text-3xl text-foreground">
+                            {project.title}
+                        </DialogTitle>
+                        <p className="text-muted-foreground mt-2">{project.description}</p>
+                    </DialogHeader>
 
-const ProjectModal = ({ isOpen, onClose, project, projectImages }: ProjectModalProps) => {
-  const { t } = useLanguage();
+                    {/* Tecnologias */}
+                    <section>
+                        <div className="flex items-center gap-2 mb-3">
+                            <Cpu className="w-4 h-4 text-primary" />
+                            <h3 className="font-serif font-medium text-foreground">{m.technologies}</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                                <span
+                                    key={tag}
+                                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </section>
 
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          className="fixed inset-0 bg-foreground/40 backdrop-blur-sm z-50 flex items-start justify-center p-4 overflow-y-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-        >
-          <motion.div
-            className="bg-background rounded-3xl max-w-3xl w-full my-8 md:my-12 relative overflow-hidden shadow-2xl border border-border/50"
-            initial={{ scale: 0.9, y: 40, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            exit={{ scale: 0.9, y: 40, opacity: 0 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 pb-0">
-              <h2 className="text-2xl md:text-3xl font-serif font-medium text-foreground">
-                {project.title}
-              </h2>
-              <button
-                onClick={onClose}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+                    {/* Problema */}
+                    {project.problem && (
+                        <motion.section
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="border-l-2 border-destructive/40 pl-4"
+                        >
+                            <div className="flex items-center gap-2 mb-2">
+                                <AlertCircle className="w-4 h-4 text-destructive" />
+                                <h3 className="font-serif font-medium text-foreground">{m.problem}</h3>
+                            </div>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{project.problem}</p>
+                        </motion.section>
+                    )}
 
-            {/* Content */}
-            <div className="p-6 space-y-5">
-              {/* Carousel */}
-              <ProjectCarousel images={projectImages} title={project.title} />
+                    {/* Solução */}
+                    {project.solution && (
+                        <motion.section
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.15 }}
+                            className="border-l-2 border-primary/60 pl-4"
+                        >
+                            <div className="flex items-center gap-2 mb-2">
+                                <Lightbulb className="w-4 h-4 text-primary" />
+                                <h3 className="font-serif font-medium text-foreground">{m.solution}</h3>
+                            </div>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{project.solution}</p>
+                        </motion.section>
+                    )}
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                    {/* Resultados */}
+                    {results.length > 0 && (
+                        <motion.section
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <div className="flex items-center gap-2 mb-3">
+                                <TrendingUp className="w-4 h-4 text-secondary" />
+                                <h3 className="font-serif font-medium text-foreground">{m.results}</h3>
+                            </div>
+                            <ul className="space-y-2">
+                                {results.map((r, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                                        <span>{r}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.section>
+                    )}
 
-              {/* Overview & Role - side by side on desktop */}
-              <div className="grid md:grid-cols-2 gap-5">
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Eye className="w-4 h-4 text-primary" />
-                    <h3 className="font-serif text-base font-medium text-foreground">
-                      {t.portfolio.overview}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {project.longDescription}
-                  </p>
+                    {/* Artefatos (apenas se houver) */}
+                    {artifacts.length > 0 && (
+                        <motion.section
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.25 }}
+                        >
+                            <div className="flex items-center gap-2 mb-3">
+                                <FileText className="w-4 h-4 text-primary" />
+                                <h3 className="font-serif font-medium text-foreground">{m.artifacts}</h3>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                                {artifacts.map((a, i) => (
+                                    <a
+                                        key={i}
+                                        href={a.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-border bg-background hover:bg-muted text-sm text-foreground transition-colors"
+                                    >
+                                        <Download className="w-4 h-4 text-primary" />
+                                        {a.name}
+                                    </a>
+                                ))}
+                            </div>
+                        </motion.section>
+                    )}
+
+                    {/* Links */}
+                    <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
+                        {project.hasDemo && (
+                            <Button asChild variant="default" size="sm">
+                                <a href={links?.demo || "#"} target="_blank" rel="noopener noreferrer">
+                                    <Play className="w-4 h-4 mr-1.5" />
+                                    {t.portfolio.demo}
+                                </a>
+                            </Button>
+                        )}
+                        {project.hasCode && (
+                            <Button asChild variant="outline" size="sm">
+                                <a href={links?.code || "#"} target="_blank" rel="noopener noreferrer">
+                                    <Github className="w-4 h-4 mr-1.5" />
+                                    {t.portfolio.code}
+                                </a>
+                            </Button>
+                        )}
+                        {project.hasFigma && (
+                            <Button asChild variant="outline" size="sm">
+                                <a href={links?.figma || "#"} target="_blank" rel="noopener noreferrer">
+                                    <Figma className="w-4 h-4 mr-1.5" />
+                                    {t.portfolio.figma}
+                                </a>
+                            </Button>
+                        )}
+                    </div>
                 </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Layers className="w-4 h-4 text-secondary" />
-                    <h3 className="font-serif text-base font-medium text-foreground">
-                      {t.portfolio.role}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {project.role}
-                  </p>
-                </div>
-              </div>
-
-              {/* Results */}
-              <div className="glass-card rounded-2xl p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <Award className="w-4 h-4 text-primary" />
-                  <h3 className="font-serif text-base font-medium text-foreground">
-                    {t.portfolio.results}
-                  </h3>
-                </div>
-                <p className="text-foreground text-sm font-medium leading-relaxed">
-                  {project.results}
-                </p>
-              </div>
-
-              {/* Links */}
-              {(project.hasDemo || project.hasCode || project.hasFigma || project.hasLive) && (
-                <div className="flex flex-wrap gap-3">
-                  {project.hasLive && project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
-                    >
-                      <Globe className="w-4 h-4" />
-                      {t.portfolio.livesite}
-                    </a>
-                  )}
-                  {project.hasDemo && project.demoUrl && (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-muted text-foreground font-medium text-sm hover:bg-muted/80 transition-colors"
-                    >
-                      <Play className="w-4 h-4" />
-                      {t.portfolio.demo}
-                    </a>
-                  )}
-                  {project.hasCode && project.codeUrl && (
-                    <a
-                      href={project.codeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-muted text-foreground font-medium text-sm hover:bg-muted/80 transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      {t.portfolio.code}
-                    </a>
-                  )}
-                  {project.hasFigma && project.figmaUrl && (
-                    <a
-                      href={project.figmaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-muted text-foreground font-medium text-sm hover:bg-muted/80 transition-colors"
-                    >
-                      <Figma className="w-4 h-4" />
-                      {t.portfolio.figma}
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+            </DialogContent>
+        </Dialog>
+    );
 };
 
 export default ProjectModal;

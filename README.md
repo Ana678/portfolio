@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# Portfólio Pessoal - Ana Carolina
 
-## Project info
+Portfólio profissional desenvolvido com React + TypeScript para apresentar trajetória, habilidades e projetos em destaque.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Visão geral
 
-## How can I edit this code?
+- Interface bilíngue (PT/EN)
+- Tema claro/escuro com persistência em localStorage
+- Layout responsivo com animações usando Framer Motion
+- Seções principais: Hero, Sobre, Skills, Projetos e Contato
+- Cards de projetos com links para repositório, design e demonstrações
 
-There are several ways of editing your application.
+Site publicado: https://ana-carolina.dev
 
-**Use Lovable**
+## Stack principal
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui (Radix UI)
+- Framer Motion
+- Vitest + Testing Library
 
-Changes made via Lovable will be committed automatically to this repo.
+## Estrutura do projeto
 
-**Use your preferred IDE**
+```text
+src/
+	components/       # Seções da página e componentes de interface
+	contexts/         # Contexto global (idioma)
+	i18n/             # Conteúdo traduzido PT/EN
+	pages/            # Páginas da aplicação
+	test/             # Configuração e testes
+public/
+	assets/img/       # Imagens dos projetos
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Requisitos
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+
+- npm 9+
 
-Follow these steps:
+## Como executar localmente
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# 1) Clone o repositório
+git clone <URL_DO_REPOSITORIO>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2) Entre na pasta do projeto
+cd portfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3) Instale as dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4) Rode em modo de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Aplicação disponível em: http://localhost:5173
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts disponíveis
 
-**Use GitHub Codespaces**
+- npm run dev: inicia o servidor de desenvolvimento
+- npm run build: gera build de produção em dist/
+- npm run build:dev: gera build no modo development
+- npm run preview: serve localmente a build gerada
+- npm run lint: executa o ESLint
+- npm run test: executa os testes uma vez
+- npm run test:watch: executa os testes em modo watch
+- npm run deploy: publica o conteúdo de dist/ via gh-pages
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deploy
 
-## What technologies are used for this project?
+Este projeto já está configurado para deploy com GitHub Pages usando os scripts:
 
-This project is built with:
+- npm run predeploy
+- npm run deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+O campo homepage no package.json está definido para:
 
-## How can I deploy this project?
+- https://ana-carolina.dev
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Personalização de conteúdo
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Textos e conteúdo PT/EN: src/i18n/translations.ts
+- Seções da home: src/pages/Index.tsx
+- Contatos e links sociais: src/components/ContactSection.tsx
+- Projetos exibidos na seção de portfólio: src/i18n/translations.ts

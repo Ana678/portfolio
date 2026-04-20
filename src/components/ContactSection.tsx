@@ -15,18 +15,21 @@ const ContactSection = () => {
             label: t.contact.email,
             href: "mailto:anaaraujo.dev@gmail.com",
             value: "anaaraujo.dev@gmail.com",
+            getInTouch: "Mandar Email"
         },
         {
             icon: Linkedin,
             label: "LinkedIn",
             href: "https://linkedin.com/in/ana678/",
             value: "/ana678",
+            getInTouch: "Ver Perfil"
         },
         {
             icon: Github,
             label: "GitHub",
             href: "https://github.com/Ana678",
             value: "@Ana678",
+            getInTouch: "Explorar Repositórios"
         },
     ];
 
@@ -89,6 +92,7 @@ interface ContactCardProps {
         label: string;
         href: string;
         value: string;
+        getInTouch: string;
     };
     variants: any;
     t: any;
@@ -113,7 +117,7 @@ const ContactCard = ({ contact, variants, t }: ContactCardProps) => {
                 <contact.icon className="w-6 h-6 text-primary" />
             </div>
             <h3 className="font-medium text-foreground mb-1">{contact.label}</h3>
-            <p className="text-sm text-muted-foreground mb-3">{contact.value}</p>
+            <p className="text-xs text-muted-foreground mb-3">{contact.value}</p>
 
             {/* Hover text - below existing content */}
             <motion.span
@@ -122,7 +126,7 @@ const ContactCard = ({ contact, variants, t }: ContactCardProps) => {
                 transition={{ duration: 0.2 }}
                 className="text-sm font-medium text-primary"
             >
-                {t.contact.getInTouch}
+                {contact.getInTouch}
             </motion.span>
         </motion.a>
     );
