@@ -81,15 +81,6 @@ export const en: Translations = {
             subtitle: "Click any technology to understand what it is used for.",
             categories: [
                 {
-                    name: "Design & Experience",
-                    description: "Tools and practices I use to shape clear journeys, validate ideas, and improve end-to-end user experience.",
-                    skills: [
-                        { name: "Figma", explanation: "Where I design interfaces before coding. It lets me create and test layouts with the team." },
-                        { name: "Scrum", explanation: "A way to organize work in short cycles, delivering value quickly and adjusting direction along the way." },
-                        { name: "Git", explanation: "Like a time machine for code: it saves every change and keeps team collaboration organized." },
-                    ],
-                },
-                {
                     name: "Front-end & Visual",
                     description: "Technologies focused on interface, interaction, and visual performance to deliver fast and intuitive experiences.",
                     skills: [
@@ -98,6 +89,14 @@ export const en: Translations = {
                         { name: "React", explanation: "A tool for building modern and interactive interfaces — many websites you use today are built with it." },
                         { name: "Next.js", explanation: "A turbocharged version of React: makes sites faster and helps them show up better in Google." },
                         { name: "Tailwind CSS", explanation: "A fast and elegant way to make sites beautiful without writing mountains of style code." },
+                    ],
+                },
+                {
+                    name: "Design",
+                    description: "Tools and practices I use to shape clear journeys, validate ideas, and improve end-to-end user experience.",
+                    skills: [
+                        { name: "Figma", explanation: "Where I design interfaces before coding. It lets me create and test layouts with the team." },
+                        { name: "Figjam", explanation: "A collaboration tool for creating and sharing design ideas and flows." },
                     ],
                 },
                 {
@@ -116,6 +115,17 @@ export const en: Translations = {
                         { name: "Docker", explanation: "Packages the system so it runs the same everywhere — from my laptop to the cloud." },
                     ],
                 },
+                {
+                    name: "Organization & Methodology",
+                    description: "Tools and practices I use to maintain focus, productivity, and quality in teamwork, even in complex projects.",
+                    skills: [
+                        {
+                            name: "Scrum", explanation: "Scrum is an agile framework for managing complex projects, often used in software development. It emphasizes teamwork, accountability, and iterative progress toward a well-defined goal. In Scrum, work is divided into small, manageable pieces called 'sprints,' typically lasting 2-4 weeks. The team holds regular meetings to plan, review progress, and adapt to changes, ensuring that the project stays on track and delivers value quickly."
+                        },
+                        { name: "Kanban", explanation: "Kanban is a visual method for managing work as it moves through a process. It helps to visualize the workflow, limit work in progress, and maximize efficiency." },
+                        { name: "Git", explanation: "Git is a version control system that allows you to manage changes in your code and collaborate with others in an organized way." },
+                    ]
+                }
             ],
         },
         ai: {

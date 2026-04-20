@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Cpu, Brain, Heart, Bike, TreePine, Cat, PenTool, LayoutPanelLeft, Server } from "lucide-react";
+import { Cpu, Brain, Heart, Bike, TreePine, Cat, PenTool, Computer, Server } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 
-const categoryIcons = [PenTool, LayoutPanelLeft, Server];
+const categoryIcons = [Computer, PenTool, Server, Brain];
 
 const BentoGrid = () => {
     const { t } = useLanguage();

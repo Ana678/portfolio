@@ -90,7 +90,6 @@ const PortfolioSection = () => {
                             >
                                 <button
                                     type="button"
-                                    // % garante que o card duplicado abra o modal do projeto correto
                                     onClick={() => setOpenIndex(index % t.portfolio.projects.length)}
                                     className="text-left w-full h-full outline-none"
                                 >
@@ -159,6 +158,10 @@ const PortfolioSection = () => {
                             </motion.div>
                         ))}
                     </motion.div>
+
+                    <div className="flex justify-center mt-4 gap-2">
+                        <span className="text-xs text-muted-foreground">← Arraste para ver mais →</span>
+                    </div>
                 </div>
             </div>
 

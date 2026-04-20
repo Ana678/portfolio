@@ -81,15 +81,6 @@ export const pt: Translations = {
             subtitle: "Clique em qualquer tecnologia para entender no que ela é usada.",
             categories: [
                 {
-                    name: "Design & Experiência",
-                    description: "Ferramentas e práticas que uso para projetar jornadas claras, validar ideias e melhorar a experiência de ponta a ponta.",
-                    skills: [
-                        { name: "Figma", explanation: "Onde desenho as telas antes de programar. Permite criar e testar o design com toda a equipe." },
-                        { name: "Scrum", explanation: "Forma de organizar o trabalho em ciclos curtos, entregando valor rápido e ajustando rumo no caminho." },
-                        { name: "Git", explanation: "Como uma 'máquina do tempo' do código: salva cada mudança e permite trabalhar em equipe sem confusão." },
-                    ],
-                },
-                {
                     name: "Front-end & Visual",
                     description: "Tecnologias focadas em interface, interação e performance visual para entregar experiências rápidas e intuitivas.",
                     skills: [
@@ -98,6 +89,15 @@ export const pt: Translations = {
                         { name: "React", explanation: "Ferramenta para construir interfaces modernas e interativas — quase todos os sites que você usa hoje são feitos com ela." },
                         { name: "Next.js", explanation: "Versão turbinada do React: deixa sites mais rápidos e ajuda a aparecer melhor no Google." },
                         { name: "Tailwind CSS", explanation: "Forma rápida e elegante de deixar sites bonitos, sem precisar escrever montanhas de código de estilo." },
+                    ],
+                },
+                {
+                    name: "Design",
+                    description: "Ferramentas e práticas que uso para projetar jornadas claras, validar ideias e melhorar a experiência de ponta a ponta.",
+                    skills: [
+                        { name: "Figma", explanation: "Onde desenho as telas antes de programar. Permite criar e testar o design com toda a equipe." },
+                        { name: "Figjam", explanation: "Ferramenta de colaboração para criar e compartilhar ideias de design e fluxos." },
+
                     ],
                 },
                 {
@@ -116,6 +116,15 @@ export const pt: Translations = {
                         { name: "Docker", explanation: "Empacota o sistema para que ele rode igual em qualquer lugar — do meu computador até a nuvem." },
                     ],
                 },
+                {
+                    name: "Organização & Metodologia",
+                    description: "Ferramentas e práticas que aplico para manter o foco, a produtividade e a qualidade do trabalho em equipe, mesmo em projetos complexos.",
+                    skills: [
+                        { name: "Scrum", explanation: "Consiste em uma metodologia ágil para gerenciar projetos  utilizado para gerenciar projetos complexos de forma organizada, rápida e colaborativa." },
+                        { name: "Kanban", explanation: "O Kanban é um método visual simples para organizar tarefas e gerenciar o fluxo de trabalho, garantindo que as coisas sejam feitas na hora certa, sem sobrecarregar a equipe. " },
+                        { name: "Git", explanation: "É um sistema de controle de versão que permite gerenciar alterações no código e trabalhar em equipe de forma organizada." },
+                    ]
+                }
             ],
         },
         ai: {
