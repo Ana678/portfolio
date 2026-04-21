@@ -27,6 +27,7 @@ interface NavTranslations {
     skills: string;
     portfolio: string;
     contact: string;
+    downloadPortfolio: string;
 }
 
 interface HeroTranslations {

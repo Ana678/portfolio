@@ -6,6 +6,7 @@ export const en: Translations = {
         skills: "Skills",
         portfolio: "Portfolio",
         contact: "Contact",
+        downloadPortfolio: "Download Portfolio",
     },
     hero: {
         title: "Strategic Design. Scalable Architecture.",

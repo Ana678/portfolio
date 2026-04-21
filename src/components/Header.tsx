@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Language } from "@/i18n/translations";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 import GrowingVine from "./decorative/GrowingVine";
+import { generatePortfolioPDF } from "@/lib/generatePDF";
 
 const BookStack = () => (
     <svg width="32" height="28" viewBox="0 0 32 28" fill="none" className="flex-shrink-0">
@@ -91,6 +92,26 @@ const Header = () => {
                         </nav>
 
                         <div className="flex items-center gap-1 md:gap-2">
+                            <motion.button
+                                onClick={() => generatePortfolioPDF(language)}
+                                whileHover={{ scale: 1.04 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow"
+                                aria-label={t.nav.downloadPortfolio}
+                            >
+                                <Download className="w-4 h-4" />
+                                <span className="hidden md:inline">{t.nav.downloadPortfolio}</span>
+                                <span className="md:hidden">PDF</span>
+                            </motion.button>
+
+                            <button
+                                onClick={() => generatePortfolioPDF(language)}
+                                className="sm:hidden p-2 rounded-full bg-primary text-primary-foreground"
+                                aria-label={t.nav.downloadPortfolio}
+                            >
+                                <Download className="w-4 h-4" />
+                            </button>
+                            <div className=" min-h-1 h-6 w-[2px] bg-muted-foreground/20" />
                             <button
                                 onClick={toggleDarkMode}
                                 className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
@@ -127,7 +148,6 @@ const Header = () => {
                 </div>
             </motion.header>
 
-            {/* Mobile menu overlay */}
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <>
@@ -166,7 +186,7 @@ const Header = () => {
                                         {link.label}
                                     </motion.a>
                                 ))}
-                                {/* Language selector in mobile menu */}
+
                                 <div className="flex items-center gap-2 pt-2 border-t border-border/50 sm:hidden">
                                     {languages.map((lang) => (
                                         <button
