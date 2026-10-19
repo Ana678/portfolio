@@ -28,6 +28,8 @@ interface NavTranslations {
     portfolio: string;
     contact: string;
     downloadPortfolio: string;
+    downloadCompact: string;
+    downloadFull: string;
 }
 
 interface HeroTranslations {

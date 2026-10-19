@@ -69,7 +69,7 @@ const AboutSection = () => {
                                         {index === 4 && (
                                             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs font-medium">
                                                 <Loader2 className="w-3 h-3 animate-spin" />
-                                                60%
+                                                70%
                                             </span>
                                         )}
                                     </h3>
@@ -123,7 +123,7 @@ const AboutSection = () => {
                                                 <motion.div
                                                     className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
                                                     initial={{ width: 0 }}
-                                                    animate={isInView ? { width: "60%" } : {}}
+                                                    animate={isInView ? { width: "70%" } : {}}
                                                     transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
                                                 />
                                             </div>

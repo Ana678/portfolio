@@ -1,10 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Language } from "@/i18n/translations";
-import { Moon, Sun, Menu, X, Download } from "lucide-react";
+import { Moon, Sun, Menu, X, Download, ChevronDown, FileText, BookOpen } from "lucide-react";
 import { useEffect, useState } from "react";
 import GrowingVine from "./decorative/GrowingVine";
 import { generatePortfolioPDF } from "@/lib/generatePDF";
+import { generateCompactPDF } from "@/lib/generateCompactPDF";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const BookStack = () => (
     <svg width="32" height="28" viewBox="0 0 32 28" fill="none" className="flex-shrink-0">
@@ -43,6 +45,19 @@ const Header = () => {
         { code: "pt", label: "PT" },
         { code: "en", label: "EN" },
     ];
+
+    const downloadItems = (
+        <>
+            <DropdownMenuItem onSelect={() => generateCompactPDF(language)} className="cursor-pointer">
+                <FileText className="w-4 h-4 mr-2" />
+                {t.nav.downloadCompact}
+            </DropdownMenuItem>
+            <DropdownMenuItem onSelect={() => generatePortfolioPDF(language)} className="cursor-pointer">
+                <BookOpen className="w-4 h-4 mr-2" />
+                {t.nav.downloadFull}
+            </DropdownMenuItem>
+        </>
+    );
 
     const navLinks = [
         { href: "#about", label: t.nav.about },
@@ -92,25 +107,34 @@ const Header = () => {
                         </nav>
 
                         <div className="flex items-center gap-1 md:gap-2">
-                            <motion.button
-                                onClick={() => generatePortfolioPDF(language)}
-                                whileHover={{ scale: 1.04 }}
-                                whileTap={{ scale: 0.97 }}
-                                className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow"
-                                aria-label={t.nav.downloadPortfolio}
-                            >
-                                <Download className="w-4 h-4" />
-                                <span className="hidden md:inline">{t.nav.downloadPortfolio}</span>
-                                <span className="md:hidden">PDF</span>
-                            </motion.button>
+                            <DropdownMenu modal={false}>
+                                <DropdownMenuTrigger asChild>
+                                    <motion.button
+                                        whileHover={{ scale: 1.04 }}
+                                        whileTap={{ scale: 0.97 }}
+                                        className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow"
+                                        aria-label={t.nav.downloadPortfolio}
+                                    >
+                                        <Download className="w-4 h-4" />
+                                        <span className="hidden md:inline">{t.nav.downloadPortfolio}</span>
+                                        <span className="md:hidden">PDF</span>
+                                        <ChevronDown className="w-3.5 h-3.5" />
+                                    </motion.button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">{downloadItems}</DropdownMenuContent>
+                            </DropdownMenu>
 
-                            <button
-                                onClick={() => generatePortfolioPDF(language)}
-                                className="sm:hidden p-2 rounded-full bg-primary text-primary-foreground"
-                                aria-label={t.nav.downloadPortfolio}
-                            >
-                                <Download className="w-4 h-4" />
-                            </button>
+                            <DropdownMenu modal={false}>
+                                <DropdownMenuTrigger asChild>
+                                    <button
+                                        className="sm:hidden p-2 rounded-full bg-primary text-primary-foreground"
+                                        aria-label={t.nav.downloadPortfolio}
+                                    >
+                                        <Download className="w-4 h-4" />
+                                    </button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">{downloadItems}</DropdownMenuContent>
+                            </DropdownMenu>
                             <div className=" min-h-1 h-6 w-[2px] bg-muted-foreground/20" />
                             <button
                                 onClick={toggleDarkMode}

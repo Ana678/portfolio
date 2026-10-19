@@ -7,6 +7,8 @@ export const pt: Translations = {
         portfolio: "Portfólio",
         contact: "Contato",
         downloadPortfolio: "Baixar Portfólio",
+        downloadCompact: "Versão compacta",
+        downloadFull: "Versão completa",
     },
     hero: {
         title: "Design Estratégico. Arquitetura Escalável.",
@@ -165,6 +167,51 @@ export const pt: Translations = {
             close: "Fechar",
         },
         projects: [
+            {
+                title: "N-Edit - Editor de Painéis Eletrônicos",
+                description:
+                    "Nova versão do editor de roteiros e mensagens para painéis eletrônicos de ônibus da Inova Sistemas Eletrônicos, desenvolvida em parceria com o Instituto Metrópole Digital (IMD/UFRN).",
+                tags: ["React", "Material UI", "Turborepo"],
+                imgs: ["assets/img/nedit.png"],
+                hasDemo: false,
+                hasCode: false,
+                hasFigma: false,
+                problem:
+                    "O N-Edit, usado por empresas de transporte para criar os projetos, roteiros e mensagens exibidos nos painéis eletrônicos dos ônibus, era uma aplicação legada e isolada, com stack e padrões próprios. Isso dificultava a manutenção, a evolução do produto e a integração com os demais sistemas da Inova, como o N-Frota, que consome os roteiros gerados no editor.",
+
+                solution:
+                    "Em parceria com o Instituto Metrópole Digital (IMD/UFRN), atuo na construção da nova versão do N-Edit dentro de um monorepo que unifica o ecossistema de aplicações da Inova. O trabalho envolve portar as funcionalidades do legado — gestão de projetos e roteiros, editor de mensagens com modos de desenho e simulação do painel, importação e exportação (XML e XLSX) e envio ao N-Frota — para React e Material UI, reaproveitando componentes compartilhados, login unificado e pipelines de CI/CD.",
+
+                results: [
+                    "Integração do N-Edit ao ecossistema da Inova, com tema, componentes e autenticação compartilhados entre as aplicações",
+                    "Base de código mais fácil de manter: uma alteração em um componente compartilhado se reflete em todas as aplicações",
+                    "Processo de desenvolvimento documentado com ADRs, issues padronizadas e deploy por ambiente",
+                ],
+                artifacts: [],
+            },
+            {
+                title: "Tô Aqui Web - Marketplace de Serviços Locais",
+                description:
+                    "Marketplace de serviços locais que idealizei e construí de ponta a ponta — da estruturação da ideia e do design ao app mobile, API, painel administrativo e infraestrutura em nuvem.",
+                tags: ["React Native", "NestJS", "PostgreSQL", "Docker", "Google Cloud"],
+                imgs: ["assets/img/toaqui.png"],
+                hasDemo: false,
+                hasCode: false,
+                hasFigma: false,
+                problem:
+                    "Encontrar profissionais de confiança para serviços do dia a dia — como eletricistas, diaristas e pintores — ainda depende muito de indicação boca a boca. Do outro lado, prestadores autônomos têm dificuldade de ser encontrados e de captar novos clientes de forma previsível.",
+
+                solution:
+                    "Conduzi o projeto de ponta a ponta. Na concepção, estruturei a ideia e o modelo de negócio, levantei os requisitos, escrevi os termos de uso e a política de privacidade e organizei o roadmap em seis sprints — fundação, descoberta, pedidos, monetização, anúncios e notificações, testes e lançamento. Depois, prototipei e desenhei as telas, validando os fluxos de cliente e de prestador antes de codar. Na construção, desenvolvi o app mobile em React Native (Expo), com busca por categoria e localização, pedidos, avaliações e compra de créditos para acessar leads; a API em NestJS com Prisma e PostgreSQL, com autenticação JWT, pagamentos via Mercado Pago com webhooks idempotentes e envio de documentos para verificação de prestadores (KYC) no Cloudflare R2; e o painel administrativo em React, para verificar prestadores e gerenciar categorias, cupons, financeiro e preço dos leads. Por fim, montei a infraestrutura: imagem Docker multi-stage, CI/CD no GitHub Actions — que roda os testes, aplica as migrations e publica a API automaticamente no Google Cloud Run, com Artifact Registry, Secret Manager e banco PostgreSQL gerenciado na Neon — e o painel publicado no Cloudflare Workers.",
+
+                results: [
+                    "Produto completo construído de ponta a ponta: concepção, design, app mobile, API, painel administrativo e infraestrutura",
+                    "Pipeline de CI/CD que testa, aplica migrations e publica a API automaticamente a cada push",
+                    "Pagamentos resilientes, com uma estratégia de tolerância a falhas no gateway baseada em retry, idempotência e alertas por log estruturado",
+                    "Modelo de monetização por créditos e leads, com preços configuráveis pelo administrador",
+                ],
+                artifacts: [],
+            },
             {
                 title: "CASI - Saúde Geriátrica Integrada",
                 description:

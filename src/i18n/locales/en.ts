@@ -7,6 +7,8 @@ export const en: Translations = {
         portfolio: "Portfolio",
         contact: "Contact",
         downloadPortfolio: "Download Portfolio",
+        downloadCompact: "Compact version",
+        downloadFull: "Full version",
     },
     hero: {
         title: "Strategic Design. Scalable Architecture.",
@@ -166,6 +168,51 @@ export const en: Translations = {
             close: "Close",
         },
         projects: [
+            {
+                title: "N-Edit - Electronic Sign Editor",
+                description:
+                    "New version of the route and message editor for Inova Sistemas Eletrônicos' electronic bus destination signs, built in partnership with the Instituto Metrópole Digital (IMD/UFRN).",
+                tags: ["React", "Material UI", "Turborepo"],
+                imgs: ["assets/img/nedit.png"],
+                hasDemo: false,
+                hasCode: false,
+                hasFigma: false,
+                problem:
+                    "N-Edit, used by transit companies to create the projects, routes and messages shown on buses' electronic signs, was an isolated legacy application with its own stack and conventions. This made maintenance, product evolution and integration with Inova's other systems difficult — including N-Frota, which consumes the routes created in the editor.",
+
+                solution:
+                    "In partnership with the Instituto Metrópole Digital (IMD/UFRN), I work on building the new version of N-Edit inside a monorepo that unifies Inova's application ecosystem. The work involves porting the legacy features — project and route management, a message editor with drawing and sign simulation modes, XML and XLSX import/export, and sending to N-Frota — to React and Material UI, reusing shared components, unified login and CI/CD pipelines.",
+
+                results: [
+                    "N-Edit integrated into Inova's ecosystem, with theme, components and authentication shared across applications",
+                    "A more maintainable codebase: a change to a shared component is reflected in every application",
+                    "Development process documented with ADRs, standardized issues and per-environment deployment",
+                ],
+                artifacts: [],
+            },
+            {
+                title: "Tô Aqui Web - Local Services Marketplace",
+                description:
+                    "Local services marketplace I conceived and built end to end — from shaping the idea and design to the mobile app, API, admin panel and cloud infrastructure.",
+                tags: ["React Native", "NestJS", "PostgreSQL", "Docker", "Google Cloud"],
+                imgs: ["assets/img/toaqui.png"],
+                hasDemo: false,
+                hasCode: false,
+                hasFigma: false,
+                problem:
+                    "Finding trustworthy professionals for everyday services — such as electricians, cleaners and painters — still relies heavily on word of mouth. On the other side, independent providers struggle to be found and to attract new customers predictably.",
+
+                solution:
+                    "I led the project end to end. In the discovery phase, I shaped the idea and business model, gathered requirements, wrote the terms of use and privacy policy, and organized the roadmap into six sprints — foundation, discovery, requests, monetization, listings and notifications, testing and launch. Next, I prototyped and designed the screens, validating the customer and provider flows before writing code. During the build, I developed the React Native (Expo) mobile app, with search by category and location, service requests, reviews and credit purchases to access leads; the NestJS API with Prisma and PostgreSQL, with JWT authentication, Mercado Pago payments with idempotent webhooks and document uploads for provider verification (KYC) on Cloudflare R2; and the React admin panel to verify providers and manage categories, coupons, finances and lead prices. Finally, I set up the infrastructure: a multi-stage Docker image, CI/CD on GitHub Actions — running tests, applying migrations and automatically deploying the API to Google Cloud Run, with Artifact Registry, Secret Manager and a managed PostgreSQL database on Neon — and the admin panel published on Cloudflare Workers.",
+
+                results: [
+                    "A complete product built end to end: discovery, design, mobile app, API, admin panel and infrastructure",
+                    "A CI/CD pipeline that tests, applies migrations and deploys the API automatically on every push",
+                    "Resilient payments, with a fault tolerance strategy for the payment gateway based on retries, idempotency and structured log alerts",
+                    "Monetization model based on credits and leads, with prices configurable by the admin",
+                ],
+                artifacts: [],
+            },
             {
                 title: "CASI - Integrated Geriatric Health",
                 description:
